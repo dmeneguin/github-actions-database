@@ -17,3 +17,14 @@ services:
             context: ./
         volumes:
             - ./:/sqlite_query_executor
+
+    migrations_viewer:
+        container_name: migrations_viewer
+        image: flask_migrations_viewer
+        build:
+            context: ./migrations_viewer
+
+        ports:
+            - 5000:5000
+        volumes:
+            - ./migrations_viewer:/migrations_viewer
