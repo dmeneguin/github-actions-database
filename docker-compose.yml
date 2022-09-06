@@ -1,0 +1,19 @@
+version: "2.4"
+services:
+    insert_executor:
+        container_name: insert_executor
+        image: sqlite_query_executor
+        command: /bin/sh -c "python /sqlite_query_executor/sqlite_insert_executor.py"
+        build:
+            context: ./
+        volumes:
+            - ./:/sqlite_query_executor
+
+    select_executor:
+        container_name: select_executor
+        image: sqlite_query_executor
+        command: /bin/sh -c "python /sqlite_query_executor/sqlite_select_executor.py"
+        build:
+            context: ./
+        volumes:
+            - ./:/sqlite_query_executor
