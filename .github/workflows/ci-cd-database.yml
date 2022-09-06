@@ -1,4 +1,4 @@
-name: Commit date to master
+name: Commit database
 on: push
 jobs:
   date:
@@ -10,11 +10,11 @@ jobs:
 
       - name: Create database and insert on table migrations
         run: |
-          python /sqlite_query_executor/sqlite_insert_executor.py
+          python sqlite_insert_executor.py
 
       - name: Verify migrations table
         run: |
-          python /sqlite_query_executor/sqlite_select_executor.py
+          python sqlite_select_executor.py
 
       - name: setup git config
         run: |
