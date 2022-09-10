@@ -3,8 +3,7 @@ on: push
 jobs:
   database-commit:
     runs-on: ubuntu-latest
-    outputs:
-      output1: ${{ steps.step1.outputs.test }}
+
     steps:
       # Checkout the branch
       - name: checkout
