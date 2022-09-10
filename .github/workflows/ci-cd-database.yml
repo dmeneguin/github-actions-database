@@ -14,7 +14,6 @@ jobs:
         id: step1
         run: |
           python sqlite_insert_executor.py
-          echo "::set-output name=test::hello"
 
       - name: Verify migrations table
         id: step2

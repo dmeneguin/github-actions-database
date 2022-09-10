@@ -24,3 +24,4 @@ cursor.execute(insert_query)
 conn.commit()
 
 conn.close()
+print(f"::set-output name=test::hello")
