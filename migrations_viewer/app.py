@@ -15,12 +15,12 @@ def download_migrations_db():
 
 @app.route('/migrations')
 def downloadFile ():
-    path = download_migrations_db()
-    conn = sqlite3.connect(path)
+    #path = download_migrations_db()
+    conn = sqlite3.connect('migrations.db')
     cursor = conn.cursor()
 
     cursor.execute("""
-    SELECT * FROM migrations;
+    SELECT * FROM view_migrations;
     """)
 
     response = []

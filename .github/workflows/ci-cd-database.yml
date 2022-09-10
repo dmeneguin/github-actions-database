@@ -3,18 +3,24 @@ on: push
 jobs:
   database-commit:
     runs-on: ubuntu-latest
+    outputs:
+      output1: ${{ steps.step1.outputs.test }}
     steps:
       # Checkout the branch
       - name: checkout
         uses: actions/checkout@v2
 
       - name: Create database and insert on table migrations
+        id: step1
         run: |
           python sqlite_insert_executor.py
+          echo "::set-output name=test::hello"
 
       - name: Verify migrations table
+        id: step2
         run: |
           python sqlite_select_executor.py
+          echo ${{ steps.step1.outputs.test }}
 
       - name: setup git config
         run: |
@@ -26,3 +32,4 @@ jobs:
           git add migrations.db
           git commit -m "new migrations"
           git push origin master
+
