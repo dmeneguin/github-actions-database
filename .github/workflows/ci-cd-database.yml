@@ -17,7 +17,7 @@ jobs:
       - name: Verify migrations table
         id: step2
         run: |
-          python sqlite_select_executor.py ${{ steps.step1.outputs.test }}
+          python sqlite_select_executor.py "${{ steps.step1.outputs.test }}"
 
       - name: setup git config
         run: |
