@@ -30,6 +30,7 @@ a= [
     {'name':'teste2', 'success':False},
     {'name':'teste3', 'success':False}
 ]
-print(f"::set-output name=::group::Validated Objects")
-print(json.dumps(a))
-print(f"::endgroup::")
+print(f"::set-output name={}".format(json.dumps(a)))
+#::group::Validated Objects")
+#print(json.dumps(a))
+#print(f"::endgroup::")
