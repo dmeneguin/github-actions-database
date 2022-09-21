@@ -1,5 +1,6 @@
 import sqlite3
 from datetime import date
+import json
 
 conn = sqlite3.connect('migrations.db')
 cursor = conn.cursor()
