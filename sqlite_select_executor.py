@@ -2,8 +2,8 @@ import sqlite3
 import sys
 
 print(sys.argv[1:])
-for i in sys.argv[1:]:
-    print(i)
+valid_inputs = json.loads(sys.argv[1:])
+print(valid_inputs[0].get('name'))
 
 conn = sqlite3.connect('migrations.db')
 cursor = conn.cursor()
