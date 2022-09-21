@@ -25,9 +25,9 @@ conn.commit()
 
 conn.close()
 a= [
-    {'name':'teste1', 'success':true},
-    {'name':'teste2', 'success':false},
-    {'name':'teste3', 'success':false}
+    {'name':'teste1', 'success':True},
+    {'name':'teste2', 'success':False},
+    {'name':'teste3', 'success':False}
 ]
 print(f"::set-output ::group::Validated Objects")
 print(json.dumps(a))
