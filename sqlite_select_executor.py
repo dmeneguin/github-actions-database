@@ -1,5 +1,6 @@
 import sqlite3
 import sys
+import json
 
 print(sys.argv[1:])
 valid_inputs = json.loads(sys.argv[1:])
