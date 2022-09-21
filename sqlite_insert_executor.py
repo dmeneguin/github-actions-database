@@ -24,4 +24,11 @@ cursor.execute(insert_query)
 conn.commit()
 
 conn.close()
-print(f"::set-output name=test::hello")
+a= [
+    {name:'teste1', success:true},
+    {name:'teste2', success:false},
+    {name:'teste3', success:false}
+]
+print(f"::set-output ::group::Validated Objects")
+print(json.dumps(a))
+print(f"::endgroup::")
